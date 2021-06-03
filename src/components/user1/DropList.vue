@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ShareTech :src="src" :url="url"></ShareTech>
+    <ShareTech :src="src" :url="url" :user="user" :password="password"></ShareTech>
   </div>
 </template>
 
@@ -10,7 +10,9 @@ export default {
   data () {
     return {
       src: 'logo.png',
-      url: 'http://www.baidu.com'
+      url: 'http://www.baidu.com',
+      user: 'J08',
+      password: 'amebiz'
     }
   },
   components: {

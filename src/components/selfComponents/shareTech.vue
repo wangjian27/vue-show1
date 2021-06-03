@@ -5,6 +5,10 @@
       <br>
       <br>
       <el-button type="primary" @click="openLink">打开链接</el-button>
+      <br>
+      <span><strong>账号：</strong>{{user}}</span>
+      <br>
+      <span><strong>密码：</strong>{{password}}</span>
     </div>
   </div>
 </template>
@@ -13,19 +17,18 @@
 export default {
   data () {
     return {
-      childSrc: this.src,
-      childUrl: this.url
+
     }
   },
-  props: ['src', 'url'],
+  props: ['src', 'url', 'user', 'password'],
   computed: {
     setSrc () {
-      return require(`../../assets/${this.childSrc}`)
+      return require(`../../assets/${this.src}`)
     }
   },
   methods: {
     openLink () {
-      window.open(this.childUrl)
+      window.open(this.url)
     }
   }
 }

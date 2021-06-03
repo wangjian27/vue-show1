@@ -98,9 +98,12 @@ export default {
       activeMenu: ''
     }
   },
-  beforeUpdate () {
+  created () {
     this.defaultActive()
   },
+  // beforeUpdate () {
+  //   this.defaultActive()
+  // },
   methods: {
     toggleCollapse () {
       this.isCollapse = !this.isCollapse
