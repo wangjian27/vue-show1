@@ -1,14 +1,30 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
     name: 'Home',
-    component: Home
+    redirect: '/welcome',
+    component: () => import(/* webpackChunkName:"home" */'../components/Home.vue'),
+    children: [
+      {
+        path: '/welcome',
+        name: 'Welcome',
+        component: () => import('../components/Welcome.vue')
+      },
+      {
+        path: '/drop-list',
+        name: 'DropList',
+        component: () => import('../components/user1/DropList.vue')
+      }
+    ]
   },
   {
     path: '/about',
